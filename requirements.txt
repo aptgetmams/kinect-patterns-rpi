@@ -1,0 +1,20 @@
+# Kinect Patterns Generator - Dépendances
+# 
+# INSTALLATION RECOMMANDÉE:
+# Ce projet utilise les packages système pour de meilleures performances sur ARM
+# 
+# Installation automatique:
+#   sudo ./install.sh
+# 
+# Installation manuelle:
+#   sudo apt install python3-numpy python3-opencv
+# 
+# Optionnel (si Kinect V1 disponible):
+# Les bindings libfreenect sont compilés durant install.sh
+# 
+# Packages Python équivalents (non recommandés sur RPi):
+# numpy>=1.19.0
+# opencv-python>=4.5.0
+# 
+# Note: L'installation via pip peut causer des problèmes de performance
+# et de dépendances BLAS sur Raspberry Pi. Utilisez install.sh.
