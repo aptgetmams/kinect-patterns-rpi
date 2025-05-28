@@ -1,0 +1,41 @@
+[Unit]
+Description=Kinect Patterns Generator
+Documentation=https://github.com/votre-username/kinect-patterns-rpi
+After=multi-user.target graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/kinect_patterns
+Environment=HOME=/home/pi
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=PULSE_RUNTIME_PATH=/run/user/1000/pulse
+
+# Commande de démarrage
+ExecStart=/home/pi/kinect_patterns/start.sh
+
+# Gestion des erreurs
+Restart=on-failure
+RestartSec=10
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Ressources
+Nice=-5
+IOSchedulingClass=1
+IOSchedulingPriority=4
+
+# Sécurité
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+# Logs
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=kinect-patterns
+
+[Install]
+WantedBy=graphical.target
